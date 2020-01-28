@@ -1,0 +1,301 @@
+:root {
+  --primary: #478ee0;
+  --secondary: #e09947;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f1f1f1;
+}
+main {
+  /* background: linear-gradient(45deg, #bf2d59, #422a47); */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border: 1px solid #478ee0;
+  width: 80%;
+  margin: 0 auto;
+}
+.box {
+  color: #422a47;
+  padding: 1em;
+  border: 1px solid #f2f3f3;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.125);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+}
+
+/* grid */
+.grid {
+  display: grid;
+  grid-template-rows: 50px 100px 1fr 85px;
+  grid-template-areas:
+    "header header header"
+    ". blockquote ."
+    ". main ."
+    ". footer .";
+  min-height: 100vh;
+}
+/* header */
+header {
+  background-color: var(--primary);
+  padding: 0.5rem;
+  grid-area: header;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.w100 {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.w100 span {
+  font-style: italic;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0.5rem;
+}
+.w100 h3 {
+  font-weight: 400;
+}
+.w100 p {
+  font-size: 0.75rem;
+}
+
+main {
+  color: black;
+  grid-area: main;
+  border: 3px solid #478ee0;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+}
+blockquote {
+  grid-area: blockquote;
+  justify-self: center;
+  padding-top: 1rem;
+  font-style: italic;
+}
+footer {
+  grid-area: footer;
+}
+blockquote footer {
+  text-align: right;
+}
+
+/* form  */
+form {
+  padding: 0.5rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  margin: 0 1rem;
+}
+.right {
+  display: flex;
+  flex-basis: 50%;
+  margin: 0 1rem;
+}
+.error {
+  position: absolute;
+  color: indianred;
+  border: 1px dashed indianred;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: bold;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  text-align: center;
+}
+
+/* ribbon */
+.ribbon {
+  width: 200px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--primary);
+  text-align: center;
+  display: inline-block;
+  margin: 2rem auto;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.ribbon i {
+  position: absolute;
+}
+
+.ribbon i:first-child,
+.ribbon i:nth-child(2) {
+  position: absolute;
+  left: -20px;
+  bottom: -15px;
+  z-index: -1;
+  border: 20px solid transparent;
+  border-right-color: #043140;
+}
+
+.ribbon i:nth-child(2) {
+  left: auto;
+  right: -20px;
+  border-right-color: transparent;
+  border-left-color: #043140;
+}
+
+.ribbon i:nth-child(3),
+.ribbon i:last-child {
+  width: 20px;
+  bottom: -15px;
+  left: -30px;
+  z-index: -2;
+  border: 15px solid var(--primary);
+  border-left-color: transparent;
+  transform-origin: 100% 0;
+}
+
+.ribbon i:last-child {
+  bottom: -15px;
+  left: auto;
+  right: -30px;
+  border: 15px solid var(--primary);
+  border-right-color: transparent;
+
+  transform-origin: 0 0;
+}
+
+/* buttons */
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  margin: 0.2rem;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  box-shadow: 0px 9px 17px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.right .btn {
+  width: 100%;
+}
+.click {
+  font-size: 1.75rem;
+  width: 100%;
+}
+.orange {
+  background: var(--secondary);
+}
+.clear {
+  width: calc(50% - 8px);
+}
+button:hover {
+  opacity: 0.89;
+}
+
+.text {
+  font-style: italic;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+#teamname {
+  border: 1px solid #d4d4d4;
+  color: #d4d4d4;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.bottom.text {
+  text-align: center;
+  margin: 1rem;
+}
+
+/* table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  background: transparent;
+  color: #d4d4d4;
+  text-transform: uppercase;
+
+  font-size: 65%;
+}
+tbody tr {
+  background-color: #dbe8f8;
+}
+tr:nth-child(even) {
+  background-color: #ecf3fd;
+}
+
+td:nth-child(1) {
+  text-align: center;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  text-align: right;
+}
+
+/* footer */
+.footer {
+  padding-top: 3rem;
+  justify-self: center;
+}
+a {
+  color: var(--primary);
+}
+.center {
+  text-align: center;
+}
+
+form.team {
+  flex-direction: column;
+}
+.stats {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-style: italic;
+}
+.stats span {
+  display: block;
+  color: var(--primary);
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
